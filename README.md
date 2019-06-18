@@ -1,6 +1,10 @@
 # Custom Activity Spring Boot
 
-### Steps
+### Introduction
+The purpose of this project is to serve as template for building Journey Builder Custom Activities for
+ Marketing Cloud using Spring Boot.
+
+### Setup
 1. Clone this repo
 2. Edit custom activity configuration
 3. Customize configuration screen logic 
@@ -10,7 +14,7 @@
 ### Files description
 
 ##### boot_custom_activity/src/main/resources/static
-* **/images**: 
+* **/images**: Contains the icons used by the custom activity button in Journey Builder
 * **/js**: Contains all necessary libs
 * **config.json**: Contains the configurations for the custom activity. These configurations may be overwriten in the configuration screen.
 * **customActivity.js**: Contains the logic to interact with Journey Builder and configuration screen(index.html)
@@ -26,7 +30,7 @@
 * **ExecutePayload.java**: A POJO to represent the data sent by Jouney when the custom activity is triggered.
 * **RequestLoggingFilterConfig.java**: Configuration to enable logging requests.
 
-### Detailed Steps
+### Detailed Setup
 
 1. Clone this repo
 
