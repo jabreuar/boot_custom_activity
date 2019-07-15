@@ -1,39 +1,36 @@
 {
-	"key": "<YOUR APPLICATION EXTENSION KEY HERE>",
+	"key": "e9d1cc98-3b21-43ad-9f76-18109e2fd5ae",
 	"metaData": {
-		"icon": "images/icon.png",
-		"iconSmall": "images/icon_small.png"
+		"icon": "images/unlock.png",
+		"iconSmall": "images/unlock_small.png"
 	},
-	"type": "<TYPE, FOR CUSTOM ACTIVITY USE RESTDECISION>",
+	"type": "RESTDECISION",
 	"lang": {
 		"en-US": {
-			"name": "<CUSTOM ACTIVITY NAME>",
-			"description": "<CUSTOM ACTIVITY DESCRIPTION>"
+			"name": "CheckCustomerPermissionEMC",
+			"description": "Custom activity to check if user has permission for notification"
 		}
 	},
 	"workflowApiVersion": "1.1",
 	"configurationArguments": {
-		"applicationExtensionKey": "<YOUR APPLICATION EXTENSION KEY HERE>",
+		"applicationExtensionKey": "e9d1cc98-3b21-43ad-9f76-18109e2fd5ae",
 		"save": {
-			"url": "https://<URL OF THE SERVER RUNNING THE BACKEND>/activity/save",
+			"url": "https://check-user-permission.herokuapp.com/activity/save",
 			"verb": "POST",
 			"body": "",
-			"useJwt": true,
-			"customerKey": "<EXTERNAL KEY OF THE SALT KEY FOR THE JWT>"
+			"useJwt": false
 		},
 		"publish": {
-			"url": "https://<URL OF THE SERVER RUNNING THE BACKEND>/activity/publish",
+			"url": "https://check-user-permission.herokuapp.com/activity/publish",
 			"verb": "POST",
 			"body": "",
-			"useJwt": true,
-			"customerKey": "<EXTERNAL KEY OF THE SALT KEY FOR THE JWT>"
+			"useJwt": false
 		},
 		"validate": {
-			"url": "https://<URL OF THE SERVER RUNNING THE BACKEND>/activity/validate",
+			"url": "https://check-user-permission.herokuapp.com/activity/validate",
 			"verb": "POST",
 			"body": "",
-			"useJwt": true,
-			"customerKey": "<EXTERNAL KEY OF THE SALT KEY FOR THE JWT>"
+			"useJwt": false
 		}
 	},
 	"wizardSteps": [
@@ -43,18 +40,18 @@
 	"outcomes": [
 		{
 			"arguments": {
-				"branchResult": "<KEY FOR PATH 1>"
+				"branchResult": "true"
 			},
 			"metaData": {
-				"label": "<LABEL FOR PATH 1>"
+				"label": "If true"
 			}
 		},
 		{
 			"arguments": {
-				"branchResult": "<KEY FOR PATH 2>"
+				"branchResult": "false"
 			},
 			"metaData": {
-				"label": "<LABEL FOR PATH 2>"
+				"label": "If false"
 			}
 		}
 	],
@@ -70,18 +67,17 @@
 		"execute": {
 			"inArguments": [],
 			"outArguments": [],
-			"url": "https://<URL OF THE SERVER RUNNING THE BACKEND>/activity/execute",
+			"url": "https://check-user-permission.herokuapp.com/activity/execute",
 			"verb": "POST",
 			"body": "",
 			"header": "",
 			"format": "json",
-			"useJwt": true,
-			"customerKey": "<EXTERNAL KEY OF THE SALT KEY FOR THE JWT>",
+			"useJwt": false,
 			"timeout": 90000
 		}
 	},
 	"edit": {
-		"url": "https://<URL OF THE SERVER RUNNING THE BACKEND>/index.html",
+		"url": "https://check-user-permission.herokuapp.com/index.html",
 		"height": 200,
 		"width": 500
 	}
